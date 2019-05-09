@@ -3,7 +3,7 @@
   Displays the Graphical User Interface (GUI) and communicates with the robot.
 
   Authors:  Your professors (for the framework)
-    and Zixin Fan, Yunpu Zhang.
+    and Zixin Fan, Yunpu Zhang
   Spring term, 2018-2019.
 """
 # DONE 1:  Put the name of EACH team member in the above.
