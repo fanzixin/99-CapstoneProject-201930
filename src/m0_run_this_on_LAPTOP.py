@@ -39,7 +39,7 @@ def main():
     # -------------------------------------------------------------------------
     root = tkinter.Tk()
     root.title("Team 7: Zixin Fan and Yunpu Zhang")
-    # TODO 2:  Fill in the XX's above appropriately for your team.
+    # DONE 2:  Fill in the XX's above appropriately for your team.
 
     # -------------------------------------------------------------------------
     # Construct a delegate (for responding to MQTT messages from the robot)
