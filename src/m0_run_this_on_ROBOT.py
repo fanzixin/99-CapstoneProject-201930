@@ -5,7 +5,7 @@
     and Zixin Fan, Yunpu Zhang.
   Spring term, 2018-2019.
 """
-# DONE 1:  Put the name of EACH team member in the above.
+# DONE 1:  Put the name of EACH team member lin the above.
 
 import time
 
