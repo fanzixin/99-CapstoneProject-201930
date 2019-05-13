@@ -26,6 +26,7 @@ def get_my_frame(root, window, mqtt_sender):
     # Add the rest of your GUI to your frame:
     # TODO: Put your GUI onto your frame (using sub-frames if you wish).
 
+    arm_up_button["command"]=lambda :
     # Return your frame:
     return frame
 
