@@ -10,6 +10,7 @@ import mqtt_remote_method_calls as mqtt
 import rosebot
 import m2_robot_code as m2
 import m3_robot_code as m3
+import math
 
 
 class MyRobotDelegate(object):
@@ -32,6 +33,43 @@ class MyRobotDelegate(object):
         self.robot.drive_system.go(left_motor_speed, right_motor_speed)
 
     # TODO: Add methods here as needed.
+    def Forward_or_Backward(self, distance, speed, delta):
+        self.robot.drive_system.go(speed, speed)
+        self.robot.drive_system.right_motor.reset_position()
+
+        while True:
+            if abs(self.robot.drive_system.right_motor.get_position() * math.pi / 180 - distance) < delta:
+                break
+
+        self.robot.drive_system.right_motor.turn_off()
+        self.robot.drive_system.left_motor.turn_off()
+
+    def Go_until_distance(self, until_distance, speed, delta):
+        while True:
+            current_until_distance = self.Get_distance()
+            print(current_until_distance)
+            if current_until_distance - until_distance > delta + 30:
+                self.robot.drive_system.go(speed, speed)
+            elif current_until_distance - until_distance > delta:
+                self.robot.drive_system.go(15, 15)
+            elif current_until_distance - until_distance < -delta - 30:
+                self.robot.drive_system.go(-speed, -speed)
+            elif current_until_distance - until_distance < -delta:
+                self.robot.drive_system.go(-15, -15)
+            else:
+                break
+
+        self.robot.drive_system.right_motor.turn_off()
+        self.robot.drive_system.left_motor.turn_off()
+
+    def Get_distance(self):
+        list = []
+
+        for k in range(5):
+            list = list + [self.robot.sensor_system.ir_proximity_sensor.get_distance()]
+
+        current_until_distance = (sum(list) - max(list) - min(list)) / 3
+        return current_until_distance
 
 
 def print_message_received(method_name, arguments):
