@@ -19,13 +19,14 @@ import m2_laptop_code as m2
 def get_my_frame(root, window, mqtt_sender):
     # Construct your frame:
     frame = ttk.Frame(window, padding=10, borderwidth=5, relief="ridge")
-    frame_label = ttk.Label(frame, text="PUT_YOUR_NAME_HERE")
+    frame_label = ttk.Label(frame, text="Yunpu_Zhang")
     frame_label.grid()
     # TODO 2: Put your name in the above.
 
     # Add the rest of your GUI to your frame:
     # TODO: Put your GUI onto your frame (using sub-frames if you wish).
 
+    arm_up_button["command"]=lambda :
     # Return your frame:
     return frame
 
