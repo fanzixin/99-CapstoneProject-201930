@@ -24,7 +24,7 @@ def get_my_frame(root, window, mqtt_sender):
     # DONE 2: Put your name in the above.
 
     # Add the rest of your GUI to your frame:
-    # TODO: Put your GUI onto your frame (using sub-frames if you wish).
+    # DONE: Put your GUI onto your frame (using sub-frames if you wish).
     entry_distance = ttk.Entry(frame, width = 8)
     entry_distance.grid()
     entry_distance.insert(0, '12')

@@ -32,7 +32,7 @@ class MyRobotDelegate(object):
         print_message_received("go", [left_motor_speed, right_motor_speed])
         self.robot.drive_system.go(left_motor_speed, right_motor_speed)
 
-    # TODO: Add methods here as needed.
+    # DONE: Add methods here as needed.
     def Forward_or_Backward(self, distance, speed, delta):
         self.robot.drive_system.go(speed, speed)
         self.robot.drive_system.right_motor.reset_position()
